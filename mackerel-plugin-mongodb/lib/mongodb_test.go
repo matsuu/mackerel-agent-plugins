@@ -15,8 +15,8 @@ func TestGraphDefinition(t *testing.T) {
 	var mongodb MongoDBPlugin
 
 	graphdef := mongodb.GraphDefinition()
-	if len(graphdef) != 4 {
-		t.Errorf("GetTempfilename: %d should be 4", len(graphdef))
+	if len(graphdef) != 12 {
+		t.Errorf("GetTempfilename: %d should be 12", len(graphdef))
 	}
 }
 
@@ -45,8 +45,8 @@ func TestParse22(t *testing.T) {
 	fmt.Println(stat)
 	assert.Nil(t, err)
 	// Mongodb Stats
-	assert.EqualValues(t, reflect.TypeOf(stat["btree_hits"]).String(), "float64")
-	assert.EqualValues(t, stat["btree_hits"], 5.0)
+	assert.EqualValues(t, reflect.TypeOf(stat["index_btree_hits"]).String(), "float64")
+	assert.EqualValues(t, stat["index_btree_hits"], 5.0)
 }
 
 func TestParse24(t *testing.T) {
@@ -74,8 +74,8 @@ func TestParse24(t *testing.T) {
 	fmt.Println(stat)
 	assert.Nil(t, err)
 	// Mongodb Stats
-	assert.EqualValues(t, reflect.TypeOf(stat["btree_hits"]).String(), "float64")
-	assert.EqualValues(t, stat["btree_hits"], 5.0)
+	assert.EqualValues(t, reflect.TypeOf(stat["index_hits"]).String(), "float64")
+	assert.EqualValues(t, stat["index_hits"], 5.0)
 }
 
 func TestParse26(t *testing.T) {
@@ -103,8 +103,8 @@ func TestParse26(t *testing.T) {
 	fmt.Println(stat)
 	assert.Nil(t, err)
 	// Mongodb Stats
-	assert.EqualValues(t, reflect.TypeOf(stat["btree_hits"]).String(), "float64")
-	assert.EqualValues(t, stat["btree_hits"], 5.0)
+	assert.EqualValues(t, reflect.TypeOf(stat["index_hits"]).String(), "float64")
+	assert.EqualValues(t, stat["index_hits"], 5.0)
 }
 
 func TestParse30(t *testing.T) {
