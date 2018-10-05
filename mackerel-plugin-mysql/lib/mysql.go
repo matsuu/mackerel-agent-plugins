@@ -123,7 +123,7 @@ func (m *MySQLPlugin) defaultGraphdef() map[string]mp.Graphs {
 		},
 		"traffic": {
 			Label: labelPrefix + " Traffic",
-			Unit:  "bytes/sec",
+			Unit:  "bytes",
 			Metrics: []mp.Metrics{
 				{Name: "Bytes_sent", Label: "Sent Bytes", Diff: true, Stacked: false},
 				{Name: "Bytes_received", Label: "Received Bytes", Diff: true, Stacked: false},
