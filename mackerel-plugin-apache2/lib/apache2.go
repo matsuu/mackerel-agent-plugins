@@ -51,7 +51,7 @@ func (c Apache2Plugin) GraphDefinition() map[string]mp.Graphs {
 			Label: (labelPrefix + " Bytes"),
 			Unit:  "bytes",
 			Metrics: []mp.Metrics{
-				{Name: "bytes_sent", Label: "Bytes Sent", Diff: true, Type: "uint64"},
+				{Name: "bytes_sent", Label: "Bytes Sent", Diff: true, Type: "uint64", Scale: 1024},
 			},
 		},
 		"cpu": {
